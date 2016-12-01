@@ -377,7 +377,7 @@ TurnOn(clie)
 
 Raid(clie)
 {
-	global isHotDone, isdailyDone, is1gogiDone, is2gogiDone, is3gogiDone, isPvPDone
+	global isHotDone, isdailyDone, is1gogiDone, is2gogiDone, is3gogiDone,is4gogiDone, is5gogiDone, isPvPDone
 	global GogiT
 RaidStart:
 	if (CheckOpt(clie) < 0) {
@@ -510,14 +510,12 @@ RaidStart:
 				printVclie(GogiT[clie,5] . "시 고기소모",clie)
 				SetInit(clie)
 				is5gogiDone := true
-				PetPvP(clie)
 				PetManage(clie)
 				Buzok(clie)
 				PvP(clie)
 				Friend(clie)
 				GogiSpend(clie)
 				Quest(clie)
-				PetPvP(clie)
 				Goto, RaidStart
 			}
 		}		
@@ -1262,6 +1260,11 @@ Ji:
 	}
 	printVclie("지속 오픈", clie)
 JiEnter:
+	sleep 1000
+	adbSwipe(700, 300, 50, 300, 100, clie) ;오른쪽으로 화면이동
+	sleep 200
+	adbSwipe(700, 300, 50, 300, 100, clie) ;오른쪽으로 화면이동
+	sleep 200
 	adbClick(70, 318, clie) ; 지속성 제단 클릭
 	r:=ImgFind("Image\jungryung\selectDiff.bmp", clie, 10,500)
 	if(r<0) {
@@ -1276,7 +1279,7 @@ JiEnter:
 		adbClick(50+100*JRdifficulty[clie,1], 193, clie) ;난이도 클릭
 		r:=ImgFind("Image\jungryung\ready.bmp", clie, 2,500)
 		if (r<0) {
-			printVclie("Error: 난이도 클릭이 되지 않음. 다시 난이도 클릭.", clie)
+			printVclie("난이도 클릭이 되지 않음. 다시 난이도 클릭.", clie)
 			adbClick(50+100*JRdifficulty[clie,1], 193, clie) ;난이도 클릭
 			k:=ImgFind("Image\jungryung\ready.bmp", clie, 2,500)
 			if(k<0) {
@@ -1356,6 +1359,11 @@ Su:
 	}
 	printVclie("수속 오픈", clie)
 SuEnter:
+	sleep 1000
+	adbSwipe(700, 300, 50, 300, 100, clie) ;오른쪽으로 화면이동
+	sleep 200
+	adbSwipe(700, 300, 50, 300, 100, clie) ;오른쪽으로 화면이동
+	sleep 200
 	adbClick(254, 318, clie) ; 수속성 제단 클릭
 	r:=ImgFind("Image\jungryung\selectDiff.bmp", clie, 10,500)
 	if(r<0) {
@@ -1370,7 +1378,7 @@ SuEnter:
 		adbClick(50+100*JRdifficulty[clie,2], 193, clie) ;난이도 클릭
 		r:=ImgFind("Image\jungryung\ready.bmp", clie, 2,500)
 		if (r<0) {
-			printVclie("Error: 난이도 클릭이 되지 않음. 다시 난이도 클릭.", clie)
+			printVclie("난이도 클릭이 되지 않음. 다시 난이도 클릭.", clie)
 			adbClick(50+100*JRdifficulty[clie,2], 193, clie) ;난이도 클릭
 			k:=ImgFind("Image\jungryung\ready.bmp", clie, 2,500)
 			if(k<0) {
@@ -1450,6 +1458,11 @@ Hwa:
 	}
 	printVclie("화속 오픈", clie)
 HwaEnter:
+	sleep 1000
+	adbSwipe(700, 300, 50, 300, 100, clie) ;오른쪽으로 화면이동
+	sleep 200
+	adbSwipe(700, 300, 50, 300, 100, clie) ;오른쪽으로 화면이동
+	sleep 200
 	adbClick(475, 318, clie) ; 화속성 제단 클릭
 	r:=ImgFind("Image\jungryung\selectDiff.bmp", clie, 10,500)
 	if(r<0) {
@@ -1464,7 +1477,7 @@ HwaEnter:
 		adbClick(50+100*JRdifficulty[clie,3], 193, clie) ;난이도 클릭
 		r:=ImgFind("Image\jungryung\ready.bmp", clie, 2,500)
 		if (r<0) {
-			printVclie("Error: 난이도 클릭이 되지 않음. 다시 난이도 클릭.", clie)
+			printVclie("난이도 클릭이 되지 않음. 다시 난이도 클릭.", clie)
 			adbClick(50+100*JRdifficulty[clie,3], 193, clie) ;난이도 클릭
 			k:=ImgFind("Image\jungryung\ready.bmp", clie, 2,500)
 			if(k<0) {
@@ -1544,6 +1557,11 @@ Poong:
 	}
 	printVclie("풍속 오픈", clie)
 PoongEnter:
+	sleep 1000
+	adbSwipe(700, 300, 50, 300, 100, clie) ;오른쪽으로 화면이동
+	sleep 200
+	adbSwipe(700, 300, 50, 300, 100, clie) ;오른쪽으로 화면이동
+	sleep 200
 	adbClick(693, 318, clie) ; 풍속성 제단 클릭
 	r:=ImgFind("Image\jungryung\selectDiff.bmp", clie, 10,500)
 	if(r<0) {
@@ -1558,7 +1576,7 @@ PoongEnter:
 		adbClick(50+100*JRdifficulty[clie,4], 193, clie) ;난이도 클릭
 		r:=ImgFind("Image\jungryung\ready.bmp", clie, 2,500)
 		if (r<0) {
-			printVclie("Error: 난이도 클릭이 되지 않음. 다시 난이도 클릭.", clie)
+			printVclie("난이도 클릭이 되지 않음. 다시 난이도 클릭.", clie)
 			adbClick(50+100*JRdifficulty[clie,4], 193, clie) ;난이도 클릭
 			k:=ImgFind("Image\jungryung\ready.bmp", clie, 2,500)
 			if(k<0) {
@@ -1696,7 +1714,7 @@ SokDong(clie)
 		}
 	}
 EnterGate:
-	r:=ImgFind("Image\sokdong\gate.bmp", clie, 10,500) 
+	r:=ImgFind("Image\sokdong\gate.bmp", clie, 20,500) 
 	if(r<0) {
 		printVclie("Error. 관문입장 실패. 종료", clie)
 		SB_SetText("대기")
@@ -1756,6 +1774,7 @@ EnterGate:
 			Goto, EnterGate
 		}
 		else if (k = 2) {
+			printVclie("속동 패배.", clie)
 			tolerance := tolerance -1
 			if(tolerance = 0) {
 				SetInit(clie)
@@ -2038,6 +2057,13 @@ FstRegion2:
 			Goto, SndRegion
 		}
 	}
+	r:=ImgFind("Image\buzok\fighting.bmp",clie,17,1000)
+	if (r<0) {
+		printVclie("진입 실패. 이미 다른 부족원 수행중인듯. 지역하나 넘어감.", clie)
+		sleep 500
+		adbClick(31,61, clie) ; 뒤로가기
+		Goto, SndRegion
+	}
 	printVclie("지역 전투중", clie)
 	r:=Img2Find("Image\buzok\endFight.bmp","Image\buzok\clear.bmp",clie,300,1000) ;전투종료
 	sleep 1000
@@ -2144,6 +2170,13 @@ SndRegion2:
 			Goto, ThdRegion
 		}
 	}
+	r:=ImgFind("Image\buzok\fighting.bmp",clie,17,1000)
+	if (r<0) {
+		printVclie("진입 실패. 이미 다른 부족원 수행중인듯. 지역하나 넘어감.", clie)
+		sleep 500
+		adbClick(31,61, clie) ; 뒤로가기
+		Goto, ThdRegion
+	}
 	printVclie("지역 전투중", clie)
 	r:=Img2Find("Image\buzok\endFight.bmp","Image\buzok\clear.bmp",clie,300,1000) ;전투종료
 	sleep 1000
@@ -2166,7 +2199,7 @@ ThdRegion:
 	if(r=2) {
 		printVclie("다른부족원 수행중. 지역 하나 넘어감.", clie)
 		adbClick(401, 352, clie) ;확인
-		Goto, SndRegion
+		Goto, EndRegion
 	}
 	else if(r=3) {
 		SetInit(clie)
@@ -2249,6 +2282,13 @@ ThdRegion2:
 			adbClick(31,61, clie) ; 뒤로가기
 			Goto, EndRegion
 		}
+	}
+	r:=ImgFind("Image\buzok\fighting.bmp",clie,17,1000)
+	if (r<0) {
+		printVclie("진입 실패. 이미 다른 부족원 수행중인듯. 지역하나 넘어감.", clie)
+		sleep 500
+		adbClick(31,61, clie) ; 뒤로가기
+		Goto, EndRegion
 	}
 	printVclie("지역 전투중", clie)
 	r:=Img2Find("Image\buzok\endFight.bmp","Image\buzok\clear.bmp",clie,300,1000) ;전투종료
