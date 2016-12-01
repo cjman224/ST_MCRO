@@ -828,9 +828,9 @@ GogiSpend(clie)
 		SB_SetText("대기")
 		return
 	}
-GogiStart:
 	SB_SetText("고기소모 수행중")
 	printVclie("고기소모 시작", clie)
+GogiStart:
 	SetInit(clie)
 	
 	r:=ImgFind("Image\hottime\sotangIcon.bmp",clie, 1,500) ; 소탕화면 열려있는지 체크
@@ -935,7 +935,7 @@ Capture1:
 	sleep 3000
 	r:=ImgFind("Image\hottime\1st.bmp",clie,5,500) ;1회다시활성화
 	if(r<0) {
-		k:=Img2Find("Image\hottime\noGogi.bmp","Image\mohum\sinbi.bmp",clie,8,500) ; 혹시 고기나 신비문제?
+		k:=Img2Find("Image\hottime\noGogi.bmp","Image\mohum\sinbi.bmp",clie,5,500) ; 혹시 고기나 신비문제?
 		if(k=1) {
 			adbClick(332, 353, clie) ; 취소
 			r:=ImgFind("Image\hottime\1st.bmp",clie, 5,500) ;펫포획창
